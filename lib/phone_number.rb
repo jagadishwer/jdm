@@ -1,7 +1,6 @@
-require "jbm/version"
+module PhoneNumber
 
-module Jbm
-  def extract_phone_number(phone)
+  def extract(phone)
     unless phone.blank?
       phone.gsub!(/[^0-9]/, "")
       phone.match(/(0+)/)
@@ -13,8 +12,8 @@ module Jbm
     end
   end
 
-  def parse_phone_number(phone_number)
-    phone_number = extract_phone_number(phone_number.to_s).to_s
+  def parse(phone_number)
+    phone_number = extract(phone_number.to_s).to_s
     regex = Regexp.new "\\A("+COUNTRIES.values.map{|c|c["country_code"] unless c["country_code"].blank?}.compact.uniq.join('|')+")"
     phone_number.match(regex)
     if !$1.blank? and phone_number.index($1).eql?(0)
@@ -33,5 +32,4 @@ module Jbm
       end
     end
   end
-
 end
