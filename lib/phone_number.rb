@@ -1,5 +1,5 @@
 module PhoneNumber
-
+  extend self
   def extract(phone)
     unless phone.blank?
       phone.gsub!(/[^0-9]/, "")
