@@ -6,7 +6,7 @@ require 'jbm/version'
 Gem::Specification.new do |spec|
   spec.name          = "jbm"
   spec.version       = Jbm::VERSION
-  spec.authors       = ["JB"]
+  spec.authors       = ["Jagadishwer Bathula"]
   spec.email         = ["bjagadishwer@maisasolutions.com"]
   spec.summary       = %q{My First Gem}
   spec.description   = %q{My First Gem}
